@@ -30,19 +30,27 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_personal',
+                // [
+                //     'header' => 'Nama Lengkap',
+                //     'headerOption' => ['style'=>'width:200px', 'class'=>'text-center'],
+                //     'contentOption' => ['class'=>'text-center'],
+                //     'value' => function($model){
+                //         return $model->nama_lengkap;
+                //     }
+                // ], ->costum
             'nama_lengkap',
-            'nama_panggilan',
             'jenis_kelamin',
             'tempat_lahir',
-            //'tanggal_lahir',
-            //'status_perkawinan',
-            //'agama',
-            //'pendidikan',
-            //'alamat',
-            //'no_ktp',
-            //'no_hp',
-            //'email:email',
+            // [
+            //     'header' => 'Tanggal Lahir',
+            //     'value' => function($model){
+            //         return date("d-M-Y", strtotime($model->tanggal_lahir));
+            //     }
+            // ],
+            'tanggal_lahir',
+            'alamat',
+            'no_hp',
+            'email:email',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Personal $model, $key, $index, $column) {
@@ -51,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
-
+  
     <?php Pjax::end(); ?>
 
 </div>
